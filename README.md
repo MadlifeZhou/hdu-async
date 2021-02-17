@@ -57,7 +57,7 @@ fact-async 是一个基于Spring的异步并行框架；主要包括一下几个
 1、最典型的就是分页：
 
 	通常我们都是串行执行两条SQL语句，一条查询列表数据一条查询count；比如查询列表数据耗时300ms查询count500ms，
-	正常情况耗时则800ms;如果使用异步则只要500ms；
+	正常情况耗时则800ms; 如果使用异步则只要500ms；
 
 2、非事务性异步处理：
 
@@ -118,18 +118,18 @@ public List<InsureSimple> queryByCombinationGroup(ClaimsSearchRequest param, int
  }
 ```
 
-### **示例3 异步事件编程**
+### **示例3 异步事件编程，处理成功与失败回调**
 ```java
 public void  addUser(User user){
-        Map<String,User> map = new HashMap<String,User>();
-        map.put("user",user);
+	Map<String,User> map = new HashMap<String,User>();
+	map.put("user",user);
 	AsyncTemplate.execute(new AsyncTaskFuture<User>() {
 
 	    @Override
-            public User doAsync(Map<String,Object> dataMap) {
+	    public User doAsync(Map<String,Object> dataMap) {
 
-	        return (User)dataMap.get("user");
-            }
+		return (User)dataMap.get("user");
+	    }
 	}, new AsyncFutureCallback<User>() {
 
 	    @Override
