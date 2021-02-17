@@ -1,25 +1,9 @@
-# **fact-async**
+# **Hdu-async**
+一款无侵入的新型异步编程框架
 
 ## **当前版本**
 
 1.5.1-RELEASE
-
-## **Maven依赖**
-
-```xml
-
-<dependency>
-
-<groupId>com.hdu.fact</groupId>
-
-<artifactId>fact-async</artifactId>
-
-<version>1.5.1-RELEASE</version>
-
-</dependency>
-
-暂未发布到Maven中央库,请自行编译
-```
 
 ## **功能描述**
 
@@ -107,6 +91,7 @@ fact-async 是一个基于Spring的异步并行框架；主要包括一下几个
 ## **常用功能代码演示**
 
 ### **示例1 添加@Async注解**
+在需要异步执行的方法上添加@Async
 ```java
 @Async(timeout=1000)
 public List<InsureSimple> queryByCombinationGroup(ClaimsSearchRequest param, int pageNum, int pageSize) {
